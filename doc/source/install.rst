@@ -8,9 +8,9 @@ system.
 Dependencies
 ============
   
-    * Python_ >= 2.6
+    * Python_ >= 2.7
     * numpy_ >= 1.7.1
-    * quantities_ >= 0.9.0
+    * quantities_ >= 0.12.1
 
 For Debian/Ubuntu, you can install these using::
 
@@ -26,8 +26,9 @@ Neo will still install but the IO module that uses them will fail on loading:
 
    * scipy >= 0.12.0 for NeoMatlabIO
    * h5py >= 2.5 for Hdf5IO, KwikIO
+   * klusta for KwikIO
    * igor >= 0.2 for IgorIO
-   * nixio >= 1.2 for NixIO
+   * nixio >= 1.5 for NixIO
    * stfio for StimfitIO
 
 
@@ -38,7 +39,7 @@ Installing from the Python Package Index
 
 If you have pip_ installed::
 
-    $ pip install https://github.com/NeuralEnsemble/python-neo/archive/neo-0.5.0alpha1.zip
+    $ pip install neo
     
 This will automatically download and install the latest release (again
 you may need to have administrator privileges on the machine you are installing
@@ -46,14 +47,19 @@ on).
     
 To download and install manually, download:
 
-    https://github.com/NeuralEnsemble/python-neo/archive/neo-0.5.0alpha1.zip
-
-Then::
-
-    $ unzip neo-0.5.0alpha1.zip
-    $ cd neo-0.5.0alpha1
-    $ python setup.py install
+    |neo_github_url|
     
+
+Then:
+
+.. parsed-literal::
+    
+    $ unzip neo-|release|.zip
+    $ cd neo-|release|
+    $ python setup.py install
+
+
+
 or::
 
     $ python3 setup.py install
@@ -69,46 +75,6 @@ To install the latest version of Neo from the Git repository::
     $ git clone git://github.com/NeuralEnsemble/python-neo.git
     $ cd python-neo
     $ python setup.py install
-
-
-Python 3 support
-================
-
-:mod:`neo.core` is fully compatible with Python 3, but only some of the IO
-modules support it, as shown in the table below:
-
-================== ======== ========
-Module             Python 2 Python 3
-================== ======== ========
-AlphaOmegaIO       Yes      No
-AsciiSignalIO      Yes      Yes
-AsciiSpikeTrainIO  Yes      Yes
-AxonIO             Yes      Yes
-BlackrockIO        Yes      No
-BrainwareDamIO     Yes      Yes
-BrainwareF32IO     Yes      Yes
-BrainwareSrcIO     Yes      Yes
-ElanIO             Yes      No
-IgorIO             Yes      Yes
-NeoHdf5IO          Yes      Yes
-KlustakwikIO       Yes      No
-KwikIO             Yes      Yes
-MicromedIO         Yes      No
-NeoMatlabIO        Yes      Yes
-NeuroExplorerIO    Yes      No
-NeuroscopeIO       Yes      Yes
-NixIO              Yes      Yes
-PickleIO           Yes      Yes
-PlexonIO           Yes      No
-PyNNIO             Yes      Yes
-RawBinarySignalIO  Yes      Yes
-Spike2IO           Yes      Yes
-TdtIO              Yes      No
-WinEdrIO           Yes      Yes
-WinWcpIO           Yes      Yes
-================== ======== ========
-
-
 
 
 .. _`Python`: http://python.org/
